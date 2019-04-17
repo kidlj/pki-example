@@ -1,0 +1,10 @@
+[environments]
+  [environments.development]
+    name = "echo-passthrough-demo" # release name, by Jian Li 2019/04/17
+    namespace = "default"
+    wait = true
+    watch = false
+    watch-delay = 2
+    auto-connect = false
+    dockerfile = "Dockerfile"
+    chart = ""
