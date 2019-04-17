@@ -14,7 +14,7 @@ func main() {
 	// caCertPaths := []string{"../../pki-example/ca/root-ca.crt", "../../pki-example/ca/signing-ca.crt"}
 
 	// This works too
-	caCertPaths := []string{"../../pki-example/ca/signing-ca.crt"}
+	caCertPaths := []string{"../../ca/signing-ca.crt"}
 
 	// This is not adequate
 	// caCertPaths := []string{"../../pki-example/ca/root-ca.crt"}

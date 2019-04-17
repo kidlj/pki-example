@@ -11,13 +11,13 @@ import (
 func main() {
 	pool := x509.NewCertPool()
 	// This works
-	// caCertPaths := []string{"../../pki-example/ca/root-ca.crt", "../../pki-example/ca/signing-ca.crt"}
+	// caCertPaths := []string{"../../ca/root-ca.crt", "../../ca/signing-ca.crt"}
 
 	// This works too
-	caCertPaths := []string{"../../../pki-example/ca/signing-ca.crt"}
+	caCertPaths := []string{"../../../ca/signing-ca.crt"}
 
 	// This is not adequate
-	// caCertPaths := []string{"../../pki-example/ca/root-ca.crt"}
+	// caCertPaths := []string{"../../ca/root-ca.crt"}
 
 	for _, caCertPath := range caCertPaths {
 		caCrt, err := ioutil.ReadFile(caCertPath)
@@ -29,7 +29,7 @@ func main() {
 		pool.AppendCertsFromPEM(caCrt)
 	}
 
-	cliCrt, err := tls.LoadX509KeyPair("../../../pki-example/certs/simple.org.crt", "../../../pki-example/certs/simple.org.key")
+	cliCrt, err := tls.LoadX509KeyPair("../../../certs/simple.org.crt", "../../../certs/simple.org.key")
 	if err != nil {
 		fmt.Println("loadx509keypair err:", err)
 		return

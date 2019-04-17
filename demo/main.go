@@ -24,7 +24,7 @@ func main() {
 		},
 	}
 
-	err := s.ListenAndServeTLS("../pki-example/certs/simple.org.crt", "../pki-example/certs/simple.org.key")
+	err := s.ListenAndServeTLS("../certs/simple.org.crt", "../certs/simple.org.key")
 	if err != nil {
 		fmt.Println("ListenAndServeTLS err:", err)
 	}

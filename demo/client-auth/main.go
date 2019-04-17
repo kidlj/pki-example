@@ -19,7 +19,7 @@ func (h *myhandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	pool := x509.NewCertPool()
-	caCertPath := "../../pki-example/ca/signing-ca.crt"
+	caCertPath := "../../ca/signing-ca.crt"
 
 	caCrt, err := ioutil.ReadFile(caCertPath)
 	if err != nil {
@@ -38,7 +38,7 @@ func main() {
 		},
 	}
 
-	err = s.ListenAndServeTLS("../../pki-example/certs/simple.org.crt", "../../pki-example/certs/simple.org.key")
+	err = s.ListenAndServeTLS("../../certs/simple.org.crt", "../../certs/simple.org.key")
 	if err != nil {
 		fmt.Println("ListenAndServeTLS err:", err)
 	}
