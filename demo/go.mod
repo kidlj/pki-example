@@ -1,3 +1,3 @@
-module github.com/kidlj/pki-example/pki-demo
+module github.com/kidlj/pki-example/demo
 
 go 1.12
