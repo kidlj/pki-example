@@ -7,9 +7,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.externalPort }}
-    targetPort: {{ .Values.service.internalPort }}
+  - port: {{ .Values.httpService.externalPort }}
+    targetPort: {{ .Values.httpService.internalPort }}
     protocol: TCP
-    name: {{ .Values.service.name }}
+    name: {{ .Values.httpService.name }}
+  - port: {{ .Values.httpsService.externalPort }}
+    targetPort: {{ .Values.httpsService.internalPort }}
+    protocol: TCP
+    name: {{ .Values.httpsService.name }}
   selector:
     app: {{ template "fullname" . }}

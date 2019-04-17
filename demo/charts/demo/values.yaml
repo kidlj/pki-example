@@ -5,10 +5,16 @@ replicaCount: 2
 image:
   pullPolicy: IfNotPresent
 service:
+  type: ClusterIP
+httpService:
+  name: http # port name
+  externalPort: 80
+  internalPort: 8080
+httpsService:
   name: https # port name
   type: ClusterIP
   externalPort: 443
-  internalPort: 443
+  internalPort: 8443
 resources:
   limits:
     cpu: 100m

@@ -33,6 +33,10 @@ func main() {
 	// Routes
 	e.GET("/", hello)
 
+	go func() {
+		e.Logger.Fatal(e.Start(":8080"))
+	}()
+
 	// Start server
-	e.Logger.Fatal(e.StartTLS(":443", "./certs/simple.org.crt", "./certs/simple.org.key"))
+	e.Logger.Fatal(e.StartTLS(":8443", "./certs/simple.org.crt", "./certs/simple.org.key"))
 }

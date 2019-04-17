@@ -20,6 +20,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.service.internalPort }}
+        - containerPort: {{ .Values.httpService.internalPort }}
+        - containerPort: {{ .Values.httpsService.internalPort }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
