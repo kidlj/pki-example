@@ -32,6 +32,8 @@ func main() {
 
 	// Routes
 	e.GET("/", hello)
+	e.GET("/hello", hello)
+	e.GET("/world", hello)
 
 	go func() {
 		e.Logger.Fatal(e.Start(":8080"))
